@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/callison98/Piezas.svg?branch=master)](https://travis-ci.org/callison98/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/callison98/Piezas/badge.svg?branch=master)](https://coveralls.io/github/callison98/Piezas?branch=master)
+
 # Piezas
 
 ## Associated Enumerated Types
