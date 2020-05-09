@@ -88,41 +88,37 @@ TEST(PiezasTest, Game_not_done)
 	ptest.dropPiece(2);
 	ASSERT_EQ(Invalid, ptest.gameState());
 }
-TEST(PiezasTest, X_wins)
+TEST(PiezasTest, X_wins_Vert)
 {
 	Piezas ptest;
+	ptest.dropPiece(0);
 	ptest.dropPiece(1);
+	ptest.dropPiece(0);
 	ptest.dropPiece(2);
+	ptest.dropPiece(0);
+	ptest.dropPiece(1):
 	ptest.dropPiece(1);
 	ptest.dropPiece(3);
-	ptest.dropPiece(1);
+	ptest.dropPiece(3);
 	ptest.dropPiece(3);
 	ptest.dropPiece(2);
-	ptest.dropPiece(4);
-	ptest.dropPiece(3);
-	ptest.dropPiece(4);
-	ptest.dropPiece(4);
-	ptest.dropPiece(0);
-	ptest.dropPiece(0);
-	ptest.dropPiece(0);
+	ptest.dropPiece(2);
 	ASSERT_EQ(X, ptest.gameState());
 }
-TEST(PiezasTest, O_wins)
+TEST(PiezasTest, O_wins_Vert)
 {
 	Piezas ptest;
+	ptest.dropPiece(0);
+	ptest.dropPiece(1);
+	ptest.dropPiece(0);
 	ptest.dropPiece(1);
 	ptest.dropPiece(2);
-	ptest.dropPiece(1);
+	ptest.dropPiece(0):
+	ptest.dropPiece(2);
+	ptest.dropPiece(0);
+	ptest.dropPiece(3);
 	ptest.dropPiece(2);
 	ptest.dropPiece(3);
-	ptest.dropPiece(2);
-	ptest.dropPiece(4);
 	ptest.dropPiece(3);
-	ptest.dropPiece(3);
-	ptest.dropPiece(4);
-	ptest.dropPiece(4);
-	ptest.dropPiece(0);
-	ptest.dropPiece(0);
-	ptest.dropPiece(0);
 	ASSERT_EQ(O, ptest.gameState());
 }
