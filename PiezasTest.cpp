@@ -104,7 +104,7 @@ TEST(PiezasTest, X_wins)
 	ptest.dropPiece(4);
 	ASSERT_EQ(X, ptest.gameState());
 }
-TEST(PiezasTest, Y_wins)
+TEST(PiezasTest, O_wins)
 {
 	Piezas ptest;
 	ptest.dropPiece(1);
@@ -118,5 +118,5 @@ TEST(PiezasTest, Y_wins)
 	ptest.dropPiece(3);
 	ptest.dropPiece(4);
 	ptest.dropPiece(4);
-	ASSERT_EQ(Y, ptest.gameState());
+	ASSERT_EQ(O, ptest.gameState());
 }
