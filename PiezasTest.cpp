@@ -30,10 +30,37 @@ TEST(PiezasTest, Check_Drop)
 	ptest.dropPiece(3);
 	ASSERT_EQ(X, ptest.pieceAt(0,3));
 }
+TEST(PiezasTest, Check_Turns)
+{
+	Piezas ptest;
+	ptest.dropPiece(3);
+	ptest.dropPiece(3);
+	ASSERT_EQ(O, ptest.pieceAt(1,3));
+}
+TEST(PiezasTest, Check_Out_Bounds_X)
+{
+	Piezas ptest;
+	ASSERT_EQ(Blank, ptest.dropPiece(5));
+}
+TEST(PiezasTest, Check_Out_Bounds_O)
+{
+	Piezas ptest;
+	ptest.dropPiece(3);
+	ASSERT_EQ(Blank, ptest.dropPiece(5));
+}
 TEST(PiezasTest, Check_Reset)
 {
 	Piezas ptest;
 	ptest.dropPiece(3);
 	ptest.reset();
 	ASSERT_EQ(Blank, ptest.pieceAt(0,3));
+}
+TEST(PiezasTest, Game_not_done)
+{
+	Piezas ptest;
+	ptest.dropPiece(3);
+	ptest.dropPiece(1);
+	ptest.dropPiece(4);
+	ptest.dropPiece(4);
+	ASSERT_EQ(Blank, ptest.gameState());
 }
