@@ -102,6 +102,9 @@ TEST(PiezasTest, X_wins)
 	ptest.dropPiece(3);
 	ptest.dropPiece(4);
 	ptest.dropPiece(4);
+	ptest.dropPiece(0);
+	ptest.dropPiece(0);
+	ptest.dropPiece(0);
 	ASSERT_EQ(X, ptest.gameState());
 }
 TEST(PiezasTest, O_wins)
@@ -118,5 +121,8 @@ TEST(PiezasTest, O_wins)
 	ptest.dropPiece(3);
 	ptest.dropPiece(4);
 	ptest.dropPiece(4);
+	ptest.dropPiece(0);
+	ptest.dropPiece(0);
+	ptest.dropPiece(0);
 	ASSERT_EQ(O, ptest.gameState());
 }
