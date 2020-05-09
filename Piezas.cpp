@@ -172,12 +172,12 @@ Piece Piezas::gameState()
 			max = hcount;
 			win_p = cur_p;
 		}
-		if(vcount = max){
+		if(vcount == max){
 			
 			win_p = Blank;
 		}
 			
-		if(hcount = max){
+		if(hcount == max){
 			win_p = Blank;
 		}
 			

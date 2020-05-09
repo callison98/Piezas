@@ -84,7 +84,7 @@ TEST(PiezasTest, Game_not_done)
 	Piezas ptest;
 	ptest.dropPiece(3);
 	ptest.dropPiece(1);
-	ptest.dropPiece(4);
-	ptest.dropPiece(4);
+	ptest.dropPiece(2);
+	ptest.dropPiece(2);
 	ASSERT_EQ(Invalid, ptest.gameState());
 }
