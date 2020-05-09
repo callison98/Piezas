@@ -173,12 +173,16 @@ Piece Piezas::gameState()
 			win_p = cur_p;
 		}
 		if(vcount == max){
-			
-			win_p = Blank;
+			if (win_p != cur_p){
+				win_p = Blank;
+			}
 		}
 			
 		if(hcount == max){
-			win_p = Blank;
+			if (win_p != cur_p){
+				win_p = Blank;
+			}
+			
 		}
 			
 	}
