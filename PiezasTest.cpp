@@ -94,15 +94,15 @@ TEST(PiezasTest, Tie)
 	ptest.dropPiece(0);
 	ptest.dropPiece(1);
 	ptest.dropPiece(0);
-	ptest.dropPiece(2);
+	ptest.dropPiece(1);
 	ptest.dropPiece(0);
 	ptest.dropPiece(1);
-	ptest.dropPiece(1);
-	ptest.dropPiece(3);
-	ptest.dropPiece(3);
-	ptest.dropPiece(3);
 	ptest.dropPiece(2);
 	ptest.dropPiece(2);
+	ptest.dropPiece(2);
+	ptest.dropPiece(3);
+	ptest.dropPiece(3);
+	ptest.dropPiece(3);
 	ASSERT_EQ(Blank, ptest.gameState());
 }
 TEST(PiezasTest, O_wins_Horz)
