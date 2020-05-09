@@ -96,7 +96,7 @@ TEST(PiezasTest, X_wins_Vert)
 	ptest.dropPiece(0);
 	ptest.dropPiece(2);
 	ptest.dropPiece(0);
-	ptest.dropPiece(1):
+	ptest.dropPiece(1);
 	ptest.dropPiece(1);
 	ptest.dropPiece(3);
 	ptest.dropPiece(3);
@@ -113,7 +113,7 @@ TEST(PiezasTest, O_wins_Vert)
 	ptest.dropPiece(0);
 	ptest.dropPiece(1);
 	ptest.dropPiece(2);
-	ptest.dropPiece(0):
+	ptest.dropPiece(0);
 	ptest.dropPiece(2);
 	ptest.dropPiece(0);
 	ptest.dropPiece(3);
