@@ -40,13 +40,13 @@ TEST(PiezasTest, Check_Turns)
 TEST(PiezasTest, Check_Out_Bounds_X)
 {
 	Piezas ptest;
-	ASSERT_EQ(Blank, ptest.dropPiece(5));
+	ASSERT_EQ(Invalid, ptest.dropPiece(5));
 }
 TEST(PiezasTest, Check_Out_Bounds_O)
 {
 	Piezas ptest;
 	ptest.dropPiece(3);
-	ASSERT_EQ(Blank, ptest.dropPiece(5));
+	ASSERT_EQ(Invalid, ptest.dropPiece(5));
 }
 TEST(PiezasTest, Check_Reset)
 {
@@ -62,5 +62,5 @@ TEST(PiezasTest, Game_not_done)
 	ptest.dropPiece(1);
 	ptest.dropPiece(4);
 	ptest.dropPiece(4);
-	ASSERT_EQ(Blank, ptest.gameState());
+	ASSERT_EQ(Invalid, ptest.gameState());
 }
