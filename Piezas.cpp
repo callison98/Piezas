@@ -25,7 +25,7 @@ Piezas::Piezas()
 {
 	for (int r = 0; r < BOARD_ROWS; r++)
 	{
-		vector<Piece> v1;
+		std::vector<Piece> v1;
 		for( int c = 0; c < BOARD_COLS; c++)
 		{
 			turn = Blank;
@@ -34,7 +34,6 @@ Piezas::Piezas()
 		board.push_back(v1);
 	}
 	turn = X;
-	std::cout << "It is X's turn" << std::endl;
 }
 
 /**
@@ -78,7 +77,7 @@ Piece Piezas::dropPiece(int column)
 		}
 		else
 		{
-			turn = O
+			turn = O;
 			return Invalid;
 		}
 	}
@@ -98,7 +97,7 @@ Piece Piezas::dropPiece(int column)
 		}
 		else
 		{
-			turn = X
+			turn = X;
 			return Invalid;
 		}
 	}
@@ -132,16 +131,17 @@ Piece Piezas::gameState()
 	Piece win_p;
 	for(int r = 0; r < BOARD_ROWS; r++)
 	{
+		int vcount = 0;
+		int hcount = 0;
 		for(int c = 0; c < BOARD_COLS; c++)
 		{
 			cur_p = board[r][c];
-			int vcount = 0;
-			int hcount = 0;
+			
 			if(board[r][c] == Blank)
 			{
-				return Invalid
+				return Invalid;
 			}
-			for(v = r; v < BOARD_ROWS; h++)
+			for(int v = r; v < BOARD_ROWS; v++)
 			{
 				if(board[v][r] == cur_p)
 				{
