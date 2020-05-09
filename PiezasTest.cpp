@@ -77,7 +77,7 @@ TEST(PiezasTest, Full_Column)
 	ptest.dropPiece(3);
 	ptest.dropPiece(3);
 	ptest.dropPiece(2);
-	ASSERT_EQ(O, ptest.pieceAt(2,3));
+	ASSERT_EQ(O, ptest.pieceAt(2,2));
 }
 TEST(PiezasTest, Game_not_done)
 {
