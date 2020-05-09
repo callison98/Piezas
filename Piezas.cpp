@@ -20,8 +20,21 @@
  * Constructor sets an empty board (default 3 rows, 4 columns) and 
  * specifies it is X's turn first
 **/
+
 Piezas::Piezas()
 {
+	for (int r = 0; r < BOARD_ROWS; r++)
+	{
+		vector<Piece> v1;
+		for( int c = 0; c < BOARD_COLS; c++)
+		{
+			turn = Blank;
+			v1.push_back(turn);
+		}
+		board.push_back(v1);
+	}
+	turn = X;
+	std::cout << "It is X's turn" << std::endl;
 }
 
 /**
@@ -30,6 +43,13 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+	for (int r = 0; r < BOARD_ROWS; r++)
+	{
+		for( int c = 0; c < BOARD_COLS; c++)
+		{
+			board[r][c] = Blank;
+		}
+	}
 }
 
 /**
@@ -42,7 +62,46 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+	if(turn == X)
+	{
+		if(column <= BOARD_COLS)
+		{
+			for (int r = 0; r < BOARD_ROWS; r++)
+    		{
+				if(board[r][column] == Blank){
+    				board[r][column] = X;
+    				turn = O;
+    				return board[r][column];
+				}
+			}
+			return Blank;
+		}
+		else
+		{
+			turn = O
+			return Invalid;
+		}
+	}
+	if(turn == O)
+	{
+		if(column <= BOARD_COLS)
+		{
+			for (int r = 0; r < BOARD_ROWS; r++)
+    		{
+				if(board[r][column] == Blank){
+    				board[r][column] = O;
+    				turn = X;
+    				return board[r][column];
+				}
+			}
+			return Blank;
+		}
+		else
+		{
+			turn = X
+			return Invalid;
+		}
+	}
 }
 
 /**
@@ -51,7 +110,10 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+    if(column <= BOARD_COLS)
+    	return board[row][column];
+    else
+    	return Invalid;
 }
 
 /**
@@ -65,5 +127,61 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+	int max = 0;
+	Piece cur_p;
+	Piece win_p;
+	for(int r = 0; r < BOARD_ROWS; r++)
+	{
+		for(int c = 0; c < BOARD_COLS; c++)
+		{
+			cur_p = board[r][c];
+			int vcount = 0;
+			int hcount = 0;
+			if(board[r][c] == Blank)
+			{
+				return Invalid
+			}
+			for(v = r; v < BOARD_ROWS; h++)
+			{
+				if(board[v][r] == cur_p)
+				{
+					vcount++;
+				}
+				else
+					break;
+			}
+			for(int h = c; h < BOARD_COLS; h++)
+			{
+				if(board[r][h] == cur_p)
+				{
+					hcount++;
+				}
+				else
+				{
+					break;
+				}
+
+			}
+		}
+		if(vcount > max){
+			max = vcount;
+			win_p = cur_p;
+		}
+			
+		if(hcount > max){
+			max = hcount;
+			win_p = cur_p;
+		}
+		if(vcount = max){
+			
+			win_p = Blank;
+		}
+			
+		if(hcount = max){
+			win_p = Blank;
+		}
+			
+	}
+	return win_p;
+
 }
