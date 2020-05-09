@@ -55,6 +55,33 @@ TEST(PiezasTest, Check_Reset)
 	ptest.reset();
 	ASSERT_EQ(Blank, ptest.pieceAt(0,3));
 }
+TEST(PiezasTest, Check_Piece_OUB)
+{
+	Piezas ptest;
+	ASSERT_EQ(Invalid, ptest.dropPiece(5));
+}
+TEST(PiezasTest, Full_Column_Over)
+{
+	Piezas ptest;
+	ptest.dropPiece(3);
+	ptest.dropPiece(4);
+	ptest.dropPiece(3);
+	ptest.dropPiece(4);
+	ptest.dropPiece(4);
+	ptest.dropPiece(3);
+	ASSERT_EQ(Blank, ptest.dropPiece(3));
+}
+TEST(PiezasTest, Full_Column)
+{
+	Piezas ptest;
+	ptest.dropPiece(3);
+	ptest.dropPiece(4);
+	ptest.dropPiece(3);
+	ptest.dropPiece(4);
+	ptest.dropPiece(3);
+	ptest.dropPiece(4);
+	ASSERT_EQ(X, ptest.pieceAt(3,3));
+}
 TEST(PiezasTest, Game_not_done)
 {
 	Piezas ptest;
