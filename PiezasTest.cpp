@@ -88,7 +88,7 @@ TEST(PiezasTest, Game_not_done)
 	ptest.dropPiece(2);
 	ASSERT_EQ(Invalid, ptest.gameState());
 }
-TEST(PiezasTest, Tie)
+/*TEST(PiezasTest, Tie)
 {
 	Piezas ptest;
 	ptest.dropPiece(0);
@@ -104,7 +104,7 @@ TEST(PiezasTest, Tie)
 	ptest.dropPiece(3);
 	ptest.dropPiece(3);
 	ASSERT_EQ(Blank, ptest.gameState());
-}
+}*/
 TEST(PiezasTest, O_wins_Horz)
 {
 	Piezas ptest;
